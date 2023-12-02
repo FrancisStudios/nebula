@@ -1,5 +1,6 @@
 {
 	"player": {
 		"default-speed": 10,
+		"raycast-length": 100
 	}
 }

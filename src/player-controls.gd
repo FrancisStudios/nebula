@@ -14,19 +14,19 @@ func _input(event):
 	if Input.is_action_just_pressed("click"):
 		var camera = $"../Camera3D"
 		var mouse_position = get_viewport().get_mouse_position()
-		var raycast_length = 100
+		
+		# Raycast configuration
+		var raycast_length = global.CONFIG['player']['raycast-length']
 		var raycast_from = camera.project_ray_origin(mouse_position)
 		var raycast_dest = raycast_from + camera.project_ray_normal(mouse_position) * raycast_length
 		var raycast_space = get_world_3d().direct_space_state
 		var raycast_query = PhysicsRayQueryParameters3D.new()
 		
+		# Raycasting
 		raycast_query.from = raycast_from
 		raycast_query.to = raycast_dest
 		
 		var result = raycast_space.intersect_ray(raycast_query)
-		
-		print(result)
-		
 		navigationAgent.target_position = result.position
 	
 
