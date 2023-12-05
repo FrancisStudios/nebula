@@ -8,11 +8,11 @@ var speed: int
 func _ready():
 	# Init player defaults
 	speed = global.CONFIG['player']['default-speed']
-	
+	$Camera3D.set_as_top_level(true)
 
 func _input(event):
 	if Input.is_action_just_pressed("click"):
-		var camera = $"../Camera3D"
+		var camera = $Camera3D
 		var mouse_position = get_viewport().get_mouse_position()
 		
 		# Raycast configuration
@@ -47,7 +47,14 @@ func moveToPointLocation(delta):
 	velocity = direction * speed
 	
 	setFaceDirection(targetPOS)
+	moveCamera()
 	move_and_slide()
+
+# Move camera with player
+func moveCamera():
+	var player_POS = global_transform.origin
+	$Camera3D.global_transform.origin.x = player_POS.x
+	$Camera3D.global_transform.origin.z = player_POS.z
 
 # Set facing direction
 func setFaceDirection(direction):

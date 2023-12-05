@@ -29,9 +29,6 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Arr
 
 [node name="Main" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 0, 0, 0.0152863, 15.7561, -0.170074)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7o12b")
 
@@ -51,14 +48,18 @@ path_desired_distance = 0.1
 target_desired_distance = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(2.58848, -0.0242943, 0.026435, 0.0655559, 0.947359, 0.058373, -0.0321146, -0.0242943, 2.24983, -0.469955, 0.487628, -0.040305)
+transform = Transform3D(2.58848, -0.0242943, 0.026435, 0.0655559, 0.947359, 0.058373, -0.0321146, -0.0242943, 2.24983, -0.112001, 0.335468, 0.487164)
 shape = SubResource("BoxShape3D_f6ddw")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 15.7561, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_gyjsp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(230.053, 0, 0, 0, 0.0837439, 0, 0, 0, 110.937, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_ighxl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
