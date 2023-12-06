@@ -15,7 +15,7 @@ Nebula: Space Adventure is a co-op, multiplayer, adventure, strategy game which 
 - 🐧 Linux - [No release yet]()
 - 🍎 Macintosh - [No release yet]()
 
-### Server • [[repository]]()
+### Server • [[repository]](https://github.com/FrancisStudios/nebula-server)
 - 🪟 Windows - [No release yet]()
 - 🐧 Linux - [No release yet]()
 - 🍎 Macintosh - [No release yet]()
